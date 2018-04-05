@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Fly to a location based on scroll position</title>
+    <title>National Treasure Interactive Plot Map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
@@ -14,6 +14,7 @@
 </head>
 <body>
     
+        <img onclick="enableMute()" id="unmute" src="images/unmute.png" width="50">
         <img onclick="enableMute()" id="mute" src="images/mute.png" width="50">
     
 <style>
@@ -25,7 +26,7 @@
     width: 50%;
     margin-left: 50%;
     font-family: sans-serif;
-    overflow-y: scroll;
+    overflow-y: hidden;
     background-color: black;
     color: white;
 }
@@ -44,15 +45,26 @@ section:last-child {
     margin-bottom: 200px;
 }
     
+#unmute
+    {
+        z-index: 100;
+        position: fixed;
+        margin-left: 5px;
+        cursor: pointer;
+    }
 #mute
     {
         z-index: 100;
         position: fixed;
+        visibility: hidden;
+        margin-left: 5px;
+        cursor: pointer;
     }
     
 #myVideo
     {
         margin-left: 10%;
+        margin-bottom: -5%;
     }
 </style>
 
@@ -279,7 +291,9 @@ function isElementOnScreen(id) {
     });    
 });
     
-    var music = document.getElementById("music1")
+    var music = document.getElementById("music1");
+    var unmute = document.getElementById("unmute");
+    var mute = document.getElementById("mute");
     var muted = false;
     
     function enableMute() 
@@ -288,11 +302,16 @@ function isElementOnScreen(id) {
                 {
                     music.muted = true;
                     muted = true;
+                    unmute.style.visibility = "hidden";
+                    mute.style.visibility = "visible";
                 }
             else
                 {
                     music.muted = false;
                     muted = false;
+                    mute.style.visibility = "hidden";
+                    unmute.style.visibility = "visible";
+                    
                 }
         } 
     
