@@ -14,11 +14,8 @@
 </head>
 <body>
     
-<audio loop autoplay>
-   <source id="music" src="music.mp3" type="audio/mpeg"> 
-</audio>
+        <img onclick="enableMute()" id="mute" src="images/mute.png" width="50">
     
-
 <style>
 #map {
     position: fixed;
@@ -46,8 +43,23 @@ section:last-child {
     border-bottom: none;
     margin-bottom: 200px;
 }
+    
+#mute
+    {
+        z-index: 100;
+        position: fixed;
+    }
+    
+#myVideo
+    {
+        margin-left: 10%;
+    }
 </style>
 
+    <audio id="music1" loop autoplay>
+   <source src="music.mp3" type="audio/mpeg"> 
+</audio>
+    
 <div id='map'></div>
 <div id='features'>
     <section id='arctic' class='active'>
@@ -72,27 +84,7 @@ section:last-child {
     <section id='trinity'>
         <h3>Trinity Church</h3>
         <p>Ian returns the Declaration and asks for the next clue, but when Ben remains coy, Ian reveals he has kidnapped Patrick as a hostage. They travel to the Trinity Church where they find an underground passage but it appears to lead to a dead end lit by a lone lantern. Patrick claims it is referencing the Midnight Ride of Paul Revere, pointing Ian to the Old North Church in Boston. Ian leaves Gates trapped in the chamber, heading for Boston. Patrick reveals the clue was a fake. They find a notch which the meerschaum pipe fits into, opening a large chamber containing the treasure. Ben contacts Sadusky, actually a Freemason, surrendering the Declaration and the treasure’s location in exchange for clemency. Ian is later arrested when Ben tips the FBI off.</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <iframe id="myVideo" width="80%" height="515" src="https://www.youtube.com/embed/Ae_QWKlE0nM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </section>
 </div>
 <script>
@@ -285,11 +277,36 @@ function isElementOnScreen(id) {
         }
       });
     });    
+});
+    
+    var music = document.getElementById("music1")
+    var muted = false;
+    
+    function enableMute() 
+        { 
+            if(muted == false)
+                {
+                    music.muted = true;
+                    muted = true;
+                }
+            else
+                {
+                    music.muted = false;
+                    muted = false;
+                }
+        } 
     
     
-});  
-
 </script>
+    
 
+    
+    
+    
+    
+    
+       
+    
+    
 </body>
 </html>
