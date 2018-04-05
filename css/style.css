@@ -1,3 +1,7 @@
+body { margin:0; padding:0; }
+
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
 #map {
     position: fixed;
     width:50%;
@@ -6,8 +10,9 @@
     width: 50%;
     margin-left: 50%;
     font-family: sans-serif;
-    overflow-y: scroll;
-    background-color: #fafafa;
+    overflow-y: hidden;
+    background-color: black;
+    color: white;
 }
 section {
     padding:  25px 50px;
@@ -23,3 +28,24 @@ section:last-child {
     border-bottom: none;
     margin-bottom: 200px;
 }
+    
+#unmute
+    {
+        z-index: 100;
+        position: fixed;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+#mute
+    {
+        z-index: 100;
+        position: fixed;
+        visibility: hidden;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    
+#myVideo
+    {
+        margin-left: 10%;
+    }

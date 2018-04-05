@@ -8,65 +8,11 @@
     <link rel="icon" href="images/icon.png">
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
     <link href="css/style.css" rel="stylesheet"/>
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-    </style>
 </head>
 <body>
     
         <img onclick="enableMute()" id="unmute" src="images/unmute.png" width="50">
         <img onclick="enableMute()" id="mute" src="images/mute.png" width="50">
-    
-<style>
-#map {
-    position: fixed;
-    width:50%;
-}
-#features {
-    width: 50%;
-    margin-left: 50%;
-    font-family: sans-serif;
-    overflow-y: hidden;
-    background-color: black;
-    color: white;
-}
-section {
-    padding:  25px 50px;
-    line-height: 25px;
-    border-bottom: 1px solid #ddd;
-    opacity: 0.25;
-    font-size: 13px;
-}
-section.active {
-    opacity: 1;
-}
-section:last-child {
-    border-bottom: none;
-    margin-bottom: 200px;
-}
-    
-#unmute
-    {
-        z-index: 100;
-        position: fixed;
-        margin-left: 5px;
-        cursor: pointer;
-    }
-#mute
-    {
-        z-index: 100;
-        position: fixed;
-        visibility: hidden;
-        margin-left: 5px;
-        cursor: pointer;
-    }
-    
-#myVideo
-    {
-        margin-left: 10%;
-    }
-</style>
 
     <audio id="music1" loop autoplay>
    <source src="music.mp3" type="audio/mpeg"> 
